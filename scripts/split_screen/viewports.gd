@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends VBoxContainer
 
 @onready var viewport1 = $ViewportContainer1/Viewport1
 @onready var viewport2 = $ViewportContainer2/Viewport2
@@ -11,6 +11,7 @@ func _ready():
   get_viewport().size_changed.connect(on_size_changed)
   on_size_changed()
   viewport2.world_2d = viewport1.world_2d
+  stage.get_node("Players/Player1/Camera2D").enabled = false
   camera1.target = stage.get_node("Players/Player1")
   camera2.target = stage.get_node("Players/Player2")
 
@@ -19,6 +20,5 @@ func _ready():
 ### CALLBACKS ###
 
 func on_size_changed():
-  print('_on_size_changed')
   var screen_size = get_viewport().get_visible_rect().size
   size = screen_size

@@ -1,6 +1,6 @@
 class_name StartMenu extends Control
 
-const GAME_SCENE := "res://scenes/maps/space_station.tscn"
+const GAME_SCENE := "res://scenes/split_screen/static_split_screen.tscn"
 
 @export var pause_menu := false
 

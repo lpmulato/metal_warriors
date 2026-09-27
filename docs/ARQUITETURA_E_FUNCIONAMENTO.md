@@ -28,8 +28,11 @@ flowchart TD
 ```
 
 O ponto de entrada configurado em `project.godot` é
-`res://scenes/ui/start_menu.tscn`. A fase carregada pelo menu é
-`res://scenes/maps/space_station.tscn`.
+`res://scenes/ui/start_menu.tscn`. O menu carrega
+`res://scenes/split_screen/static_split_screen.tscn`, que exibe a mesma fase em
+duas áreas empilhadas verticalmente: P1 na parte superior e P2 na inferior. Cada
+câmera acompanha o respectivo piloto; as duas áreas compartilham o mesmo mundo
+2D e a mesma instância da fase `res://scenes/maps/space_station.tscn`.
 
 ## 2. Configuração do projeto
 
@@ -138,7 +141,9 @@ pausada.
 ## 4. Cena principal: estação espacial
 
 `scenes/maps/space_station.tscn` tem o nó raiz `MapSpaceStation` (`Node2D`) e
-85 nós declarados no arquivo. A árvore funcional é:
+85 nós declarados no arquivo. É instanciada uma vez na área superior; a área
+inferior compartilha seu mundo 2D e renderiza a mesma fase com a câmera de P2.
+A árvore funcional do mapa é:
 
 ```text
 MapSpaceStation (Node2D)

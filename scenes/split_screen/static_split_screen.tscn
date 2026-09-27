@@ -6,7 +6,7 @@
 
 [node name="StaticSplitScreen" type="Node2D"]
 
-[node name="Viewports" type="HBoxContainer" parent="."]
+[node name="Viewports" type="VBoxContainer" parent="."]
 offset_right = 4.0
 alignment = 1
 script = ExtResource("1_g5i4m")
@@ -14,6 +14,7 @@ script = ExtResource("1_g5i4m")
 [node name="ViewportContainer1" type="SubViewportContainer" parent="Viewports"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 stretch = true
 
 [node name="Viewport1" type="SubViewport" parent="Viewports/ViewportContainer1"]
@@ -30,6 +31,7 @@ script = ExtResource("2_o6uc2")
 [node name="ViewportContainer2" type="SubViewportContainer" parent="Viewports"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 stretch = true
 
 [node name="Viewport2" type="SubViewport" parent="Viewports/ViewportContainer2"]

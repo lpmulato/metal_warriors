@@ -16,10 +16,11 @@ A branch `godot_4.7.2` e publicada em `origin` (`lpmulato/metal_warriors`) e rec
 ## Tela inicial, controles e pausa
 
 - `project.godot` agora inicia em `scenes/ui/start_menu.tscn`; a tela permite selecionar Automático, Teclado ou um controle por jogador.
+- A fase abre em tela dividida horizontal: P1 fica na parte superior e P2 na inferior; cada camera acompanha seu piloto. A fase e instanciada uma vez e as duas areas compartilham o mesmo mundo 2D.
 - `scripts/game_input.gd` cria actions separadas por jogador. Em modo automatico, o primeiro controle conectado vai para P1, o segundo para P2; vagas sem controle usam o teclado.
 - `scripts/abstract/playable.gd`, `scripts/abstract/robot.gd`, `scripts/pilot.gd` e os scripts dos robos usam as actions da vaga do piloto. `Player2` usa `input_slot = 2`; o campo `id` permanece separado para preservar a cor/material existente.
 - Durante a fase, Esc abre/fecha o menu pausado; Enter abre o menu. Enter no botao focado "Retomar" volta ao jogo.
-- O usuario confirmou que a tela inicial apareceu e funcionou ao iniciar o jogo. A pausa por Esc/Enter e a deteccao/atribuicao dos controles ainda precisam de teste manual. A execucao headless do Godot nao foi possivel neste ambiente por bloqueio ao iniciar o executavel.
+- O usuario confirmou que a tela inicial apareceu e funcionou ao iniciar o jogo. A pausa por Esc/Enter, a deteccao/atribuicao dos controles e a nova tela dividida ainda precisam de teste manual. A cena de tela dividida foi validada em modo headless com Godot 4.7.2.
 
 ## Erros observados no projeto (historico)
 

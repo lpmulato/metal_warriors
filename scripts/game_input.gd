@@ -39,7 +39,7 @@ const JOY_AXES := {
   "up": [JOY_AXIS_LEFT_Y, -1.0],
   "down": [JOY_AXIS_LEFT_Y, 1.0],
 }
-const GAME_SCENE := "res://scenes/maps/space_station.tscn"
+const GAME_SCENE := "res://scenes/split_screen/static_split_screen.tscn"
 const START_MENU_SCENE: PackedScene = preload("res://scenes/ui/start_menu.tscn")
 
 var _player_devices := {1: KEYBOARD_DEVICE, 2: KEYBOARD_DEVICE}
