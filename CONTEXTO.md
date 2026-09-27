@@ -34,3 +34,4 @@ A branch `godot_4.7.2` e publicada em `origin` (`lpmulato/metal_warriors`) e rec
 
 - Arquivo temporario nao rastreado `scenes/maps/space_station.tscn517755720.tmp`: sobra do editor Godot. Nao descartar nem apagar sem confirmar que nao esta em uso.
 - Este arquivo (`CONTEXTO.md`) foi versionado e e mantido junto com as alteracoes do projeto.
+- Visao detalhada da arquitetura, cenas, nodes, scripts e fluxos: `docs/ARQUITETURA_E_FUNCIONAMENTO.md`.
