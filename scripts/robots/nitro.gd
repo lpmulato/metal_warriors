@@ -44,7 +44,7 @@ var remote_shield = null     # pointer to dropped remote shield
 ### GAME LOOP ###
 
 func _physics_process(delta):
-  var dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized()
+  var dir = Vector2(player_axis("left", "right"), player_axis("up", "down")).normalized()
 
   match state:
     State.WALK:
@@ -96,15 +96,15 @@ func process_walk(delta, dir):
     return set_state(State.FALL)
 
   # check jump button
-  if Input.is_action_pressed("button_south"):
+  if player_action_pressed("button_south"):
     return set_state(State.JUMP)
 
   # check shield button
-  if Input.is_action_pressed("shoulder_right"):
+  if player_action_pressed("shoulder_right"):
     return set_state(State.SHIELD)
 
   # check eject button
-  if Input.is_action_pressed("button_select"):
+  if player_action_pressed("button_select"):
     eject_pilot()
     return set_state(State.UNBOARDED)
 
@@ -118,7 +118,7 @@ func process_jump(delta, dir):
 
   # check if should go to fall of fly state
   if not body_animated_sprite.is_playing():
-    if Input.is_action_pressed("button_south"):
+    if player_action_pressed("button_south"):
       return set_state(State.FLY)
     else:
       return set_state(State.FALL)
@@ -132,7 +132,7 @@ func process_fall(delta, dir):
   process_shield_drop()
 
   # check fly button
-  if Input.is_action_pressed("button_south"):
+  if player_action_pressed("button_south"):
     return set_state(State.FLY)
 
   # check landing
@@ -152,7 +152,7 @@ func process_fly(delta, dir):
   process_shield_drop()
 
   # state is locked while button is pressed
-  if Input.is_action_pressed("button_south"):
+  if player_action_pressed("button_south"):
     velocity -= get_gravity() * delta # no gravity when flying
     velocity.y = eval_velocity(velocity.y, -1, delta, max_fly_speed)
   else:
@@ -185,7 +185,7 @@ func process_shield(delta, dir):
   shield_collision_shape.position.x = -15 if flipped else 15
 
   # check shield button
-  if not Input.is_action_pressed("shoulder_right"):
+  if not player_action_pressed("shoulder_right"):
     return set_state(State.WALK)
 
 
@@ -196,7 +196,7 @@ func process_shoot(delta):
     return
 
   # check shoot button
-  shooting = Input.is_action_pressed("button_west")
+  shooting = player_action_pressed("button_west")
   if shooting:
     var bullet = bullet_scene.instantiate()
     var angle = eval_cannon_angle()
@@ -210,7 +210,7 @@ func process_shoot(delta):
 
 func process_shield_drop():
   # check drop shield button
-  if Input.is_action_just_pressed("button_north"):
+  if player_action_pressed("button_north", true):
     # destroy existing shield
     if remote_shield != null:
       remote_shield.queue_free()

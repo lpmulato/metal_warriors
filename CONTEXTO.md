@@ -5,13 +5,21 @@
 - Repositorio: `https://github.com/lpmulato/metal_warriors`
 - Diretorio: `C:\Desenvolvimento\GAMEDEV\metal_warriors`
 - Branch local: `godot_4.7.2`
-- Commit local: `eae1102` (`Set Godot project version to 4.7`)
+- Branch publicada: `godot_4.7.2` (`origin` sincronizado com as alteracoes desta entrega)
 - `project.godot` declara Godot 4.7; a validacao foi feita com Godot 4.7.2.
 - Godot 4.7.2 esta instalado em `C:\Desenvolvimento\GAMEDEV\Godot_v4.7.2-stable_win64.exe`.
 
 ## Publicacao da branch
 
-A branch `godot_4.7.2` ja foi publicada com sucesso em `origin` (`lpmulato/metal_warriors`) e esta sincronizada com o commit local `eae1102`. O erro HTTP 403 relatado anteriormente foi resolvido (permissao/credencial corrigida).
+A branch `godot_4.7.2` e publicada em `origin` (`lpmulato/metal_warriors`) e recebe as alteracoes desta entrega. O erro HTTP 403 relatado anteriormente foi resolvido (permissao/credencial corrigida).
+
+## Tela inicial, controles e pausa
+
+- `project.godot` agora inicia em `scenes/ui/start_menu.tscn`; a tela permite selecionar Automático, Teclado ou um controle por jogador.
+- `scripts/game_input.gd` cria actions separadas por jogador. Em modo automatico, o primeiro controle conectado vai para P1, o segundo para P2; vagas sem controle usam o teclado.
+- `scripts/abstract/playable.gd`, `scripts/abstract/robot.gd`, `scripts/pilot.gd` e os scripts dos robos usam as actions da vaga do piloto. `Player2` usa `input_slot = 2`; o campo `id` permanece separado para preservar a cor/material existente.
+- Durante a fase, Esc abre/fecha o menu pausado; Enter abre o menu. Enter no botao focado "Retomar" volta ao jogo.
+- O usuario confirmou que a tela inicial apareceu e funcionou ao iniciar o jogo. A pausa por Esc/Enter e a deteccao/atribuicao dos controles ainda precisam de teste manual. A execucao headless do Godot nao foi possivel neste ambiente por bloqueio ao iniciar o executavel.
 
 ## Erros observados no projeto (historico)
 
@@ -25,4 +33,4 @@ A branch `godot_4.7.2` ja foi publicada com sucesso em `origin` (`lpmulato/metal
 ## Estado local a preservar
 
 - Arquivo temporario nao rastreado `scenes/maps/space_station.tscn517755720.tmp`: sobra do editor Godot. Nao descartar nem apagar sem confirmar que nao esta em uso.
-- Este arquivo (`CONTEXTO.md`) passou a ser versionado a partir deste commit.
+- Este arquivo (`CONTEXTO.md`) foi versionado e e mantido junto com as alteracoes do projeto.

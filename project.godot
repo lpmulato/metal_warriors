@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Metal Warriors"
-run/main_scene="res://scenes/maps/space_station.tscn"
+run/main_scene="res://scenes/ui/start_menu.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/icon.png"
 config/size/initial_position_type=1
 
 [autoload]
 
+GameInput="*res://scripts/game_input.gd"
 Global="*res://scripts/global.gd"
 
 [input]

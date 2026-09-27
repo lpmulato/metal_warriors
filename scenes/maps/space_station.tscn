@@ -3071,6 +3071,7 @@ zoom = Vector2(3, 3)
 [node name="Player2" parent="Players" unique_id=541430718 instance=ExtResource("6_cpfsb")]
 position = Vector2(798, 328)
 id = 2
+input_slot = 2
 
 [node name="Robots" type="Node" parent="." unique_id=516393834]
 

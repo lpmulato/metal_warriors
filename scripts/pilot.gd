@@ -7,6 +7,7 @@ func custom_class_name(): return "Pilot"
 
 # properties defined in the editor
 @export_range(1, 4) var id := 1 ## player identifier
+@export_range(1, 2) var input_slot := 1
 @export var max_walk_speed := 100
 @export var max_fly_speed := 200
 
@@ -38,8 +39,12 @@ var dict_animation_by_angle = {
 
 ### GAME LOOP ###
 
+func get_input_slot() -> int:
+  return input_slot
+
+
 func _physics_process(delta):
-  var dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized()
+  var dir = Vector2(player_axis("left", "right"), player_axis("up", "down")).normalized()
 
   match state:
    State.WALK:
@@ -71,11 +76,11 @@ func process_walk(delta, dir):
       body_animated_sprite.pause()
 
   # check jump button
-  if Input.is_action_pressed("button_south"):
+  if player_action_pressed("button_south"):
     return set_state(State.FLY)
 
   # check if there is an empty robot touching the player and board it
-  if Input.is_action_just_pressed("button_select"):
+  if player_action_pressed("button_select", true):
     for area in area_2d.get_overlapping_areas():
       var obj = area.get_parent()
       if obj.has_method("is_empty_robot") and obj.is_empty_robot():
@@ -95,7 +100,7 @@ func process_fly(delta, dir):
     body_animated_sprite.play("fly")
 
   # state is locked while button is pressed
-  if Input.is_action_pressed("button_south"):
+  if player_action_pressed("button_south"):
     velocity -= get_gravity() * delta # no gravity when flying
     velocity.y = eval_velocity(velocity.y, -1, delta, max_fly_speed)
   else:
@@ -116,7 +121,7 @@ func process_shoot(delta):
     return
 
   # check shoot button
-  shooting = Input.is_action_pressed("button_west")
+  shooting = player_action_pressed("button_west")
   if shooting:
     body_animated_sprite.play(dict_animation_by_angle[str(int(cannon_angle))])
     var bullet = bullet_scene.instantiate()

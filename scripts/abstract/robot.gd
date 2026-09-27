@@ -16,6 +16,13 @@ var body_material = null
 var damage_ratio = 0.0
 
 
+func get_input_slot() -> int:
+  if pilot != null:
+    return pilot.get_input_slot()
+  return 1
+
+
+
 ### VIRTUALS ###
 
 func set_state(_state): pass

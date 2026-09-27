@@ -46,7 +46,7 @@ var time_to_next_fire_damage := 0.0 # time until next fire damage
 ### GAME LOOP ###
 
 func _physics_process(delta):
-  var dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized()
+  var dir = Vector2(player_axis("left", "right"), player_axis("up", "down")).normalized()
 
   match state:
     State.WALK:
@@ -106,19 +106,19 @@ func process_walk(delta, dir):
     return set_state(State.FALL)
 
   # check flame thrower button
-  if Input.is_action_pressed("button_east"):
+  if player_action_pressed("button_east"):
     return set_state(State.FLAMETHROWER)
 
   # check block building button
-  if Input.is_action_pressed("button_south") and can_build_block():
+  if player_action_pressed("button_south") and can_build_block():
     return set_state(State.BLOCKBUILD)
 
   # check shield button
-  if Input.is_action_pressed("shoulder_right"):
+  if player_action_pressed("shoulder_right"):
     return set_state(State.SHIELD)
 
   # check eject button
-  if Input.is_action_pressed("button_select"):
+  if player_action_pressed("button_select"):
     eject_pilot()
     return set_state(State.UNBOARDED)
 
@@ -155,7 +155,7 @@ func process_flamethrower(delta, dir):
         body.hit(fire_damage)
 
   # stop flamethrower when button is released
-  if body_animated_sprite.animation == 'fire_loop' and !Input.is_action_pressed("button_east"):
+  if body_animated_sprite.animation == 'fire_loop' and !player_action_pressed("button_east"):
     body_animated_sprite.play("fire_end")
     await body_animated_sprite.animation_finished
     return set_state(State.WALK)
@@ -170,7 +170,7 @@ func process_shield(delta, dir):
     flip_sprites(dir.x < 0)
 
   # check shield button
-  if not Input.is_action_pressed("shoulder_right"):
+  if not player_action_pressed("shoulder_right"):
     return set_state(State.WALK)
 
 
@@ -197,7 +197,7 @@ func process_shoot_start(delta):
   # update time to next shot
   time_to_next_shot -= delta
 
-  if (time_to_next_shot <= 0) and !shooting and Input.is_action_pressed("button_west"):
+  if (time_to_next_shot <= 0) and !shooting and player_action_pressed("button_west"):
     # button pressed, create and shoot bullet
     shooting = true
     # create bullet
@@ -215,7 +215,7 @@ func process_shoot_end():
   if bullet == null:
     # bullet already exploded
     shooting = false
-  if shooting and !Input.is_action_pressed("button_west"):
+  if shooting and !player_action_pressed("button_west"):
     # button released, explode bullet
     shooting = false
     if (bullet != null):
@@ -229,7 +229,7 @@ func process_aerial_mine(delta):
     return
 
   # if north button is pressed, create and drop an aerial mine
-  if Input.is_action_pressed("button_north"):
+  if player_action_pressed("button_north"):
     var mine = mine_scene.instantiate()
     mine.direction = Vector2(0, -1)
     mine.position = global_position + Vector2(0, -25)

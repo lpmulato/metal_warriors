@@ -34,7 +34,7 @@ var time_to_next_power_dive_damage := 0.0
 ### GAME LOOP ###
 
 func _physics_process(delta):
-  var dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized()
+  var dir = Vector2(player_axis("left", "right"), player_axis("up", "down")).normalized()
 
   match state:
     State.FLY:
@@ -68,11 +68,11 @@ func process_fly(delta, dir):
     body_animated_sprite.play("idle_on")
 
   # check shield button
-  if Input.is_action_just_pressed("shoulder_right"):
+  if player_action_pressed("shoulder_right", true):
     return set_state(State.SHIELD)
 
   # check eject button
-  if Input.is_action_just_pressed("button_select"):
+  if player_action_pressed("button_select", true):
     eject_pilot()
     return set_state(State.UNBOARDED)
 
@@ -90,7 +90,7 @@ func process_shield(delta, _dir):
         body.hit(power_dive_damage)
 
   # check shield button (released)
-  if not Input.is_action_pressed("shoulder_right"):
+  if not player_action_pressed("shoulder_right"):
     set_state(State.FLY)
 
 
@@ -99,21 +99,21 @@ func process_shoot(delta):
 
   # the order of elifs matters
   var angle = null
-  if   Input.is_action_pressed("button_south") and Input.is_action_pressed("button_east"):
+  if   player_action_pressed("button_south") and player_action_pressed("button_east"):
     angle = 45
-  elif Input.is_action_pressed("button_south") and Input.is_action_pressed("button_west"):
+  elif player_action_pressed("button_south") and player_action_pressed("button_west"):
     angle = 135
-  elif Input.is_action_pressed("button_north") and Input.is_action_pressed("button_west"):
+  elif player_action_pressed("button_north") and player_action_pressed("button_west"):
     angle = 225
-  elif Input.is_action_pressed("button_north") and Input.is_action_pressed("button_east"):
+  elif player_action_pressed("button_north") and player_action_pressed("button_east"):
     angle = 315
-  elif Input.is_action_pressed("button_east"):
+  elif player_action_pressed("button_east"):
     angle = 0
-  elif Input.is_action_pressed("button_south"):
+  elif player_action_pressed("button_south"):
     angle = 90
-  elif Input.is_action_pressed("button_west"):
+  elif player_action_pressed("button_west"):
     angle = 180
-  elif Input.is_action_pressed("button_north"):
+  elif player_action_pressed("button_north"):
     angle = 270
 
   shot_animated_sprite.visible = angle != null

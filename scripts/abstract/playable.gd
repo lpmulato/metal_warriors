@@ -16,6 +16,24 @@ var cannon_angle := 0.0
 var flipped := false
 
 
+func get_input_slot() -> int:
+  return 1
+
+
+func player_action_pressed(action: String, just_pressed := false) -> bool:
+  var player_action := GameInput.get_action_name(get_input_slot(), action)
+  if just_pressed:
+    return Input.is_action_just_pressed(player_action)
+  return Input.is_action_pressed(player_action)
+
+
+func player_axis(negative_action: String, positive_action: String) -> float:
+  return Input.get_axis(
+    GameInput.get_action_name(get_input_slot(), negative_action),
+    GameInput.get_action_name(get_input_slot(), positive_action)
+  )
+
+
 
 ### VIRTUALS ###
 
