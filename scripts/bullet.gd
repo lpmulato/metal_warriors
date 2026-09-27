@@ -86,5 +86,5 @@ func explode():
 
   # stop bullet, disable collision and play hit animation
   hit = true
-  collision_shape.disabled = true
+  collision_shape.set_deferred("disabled", true)
   animated_sprite.play("hit")

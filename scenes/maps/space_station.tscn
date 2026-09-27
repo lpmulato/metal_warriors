@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ndmu4y4a5qri"]
+[gd_scene format=4 uid="uid://ndmu4y4a5qri"]
 
 [ext_resource type="PackedScene" uid="uid://0vhoym1v8uqs" path="res://scenes/robots/drache.tscn" id="1_fra3j"]
 [ext_resource type="Texture2D" uid="uid://ddipvsf5sjwtl" path="res://assets/maps/space_station/space_station.png" id="2_7p05h"]
@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bwfl1nb6tjaiq" path="res://assets/music/08 The Enemy Commander.mp3" id="3_kdisv"]
 [ext_resource type="PackedScene" uid="uid://dr1pag2aac1t5" path="res://scenes/pilot.tscn" id="6_cpfsb"]
 [ext_resource type="Texture2D" uid="uid://btxnnjguomnu6" path="res://assets/maps/space_station/240926-184325.png" id="7_pvowr"]
-[ext_resource type="Script" path="res://scripts/stage/destructible_walls.gd" id="8_362ry"]
+[ext_resource type="Script" uid="uid://dvyjlqnivoo2k" path="res://scripts/stage/destructible_walls.gd" id="8_362ry"]
 [ext_resource type="PackedScene" uid="uid://dlgw1dl4nnauh" path="res://scenes/stage/block.tscn" id="8_s6wkr"]
 [ext_resource type="PackedScene" uid="uid://dfob2xq5b2i13" path="res://scenes/stage/elevator.tscn" id="10_afqlp"]
 [ext_resource type="PackedScene" uid="uid://cvwwgboxq5xiw" path="res://scenes/stage/elevator_bg.tscn" id="11_3246c"]
@@ -164,7 +164,6 @@ margins = Vector2i(6, 5)
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
-15:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -183,7 +182,6 @@ margins = Vector2i(6, 5)
 12:1/0 = 0
 13:1/0 = 0
 14:1/0 = 0
-15:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -199,7 +197,6 @@ margins = Vector2i(6, 5)
 12:2/0 = 0
 13:2/0 = 0
 14:2/0 = 0
-15:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
@@ -215,7 +212,6 @@ margins = Vector2i(6, 5)
 12:3/0 = 0
 13:3/0 = 0
 14:3/0 = 0
-15:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -231,7 +227,6 @@ margins = Vector2i(6, 5)
 12:4/0 = 0
 13:4/0 = 0
 14:4/0 = 0
-15:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -249,135 +244,6 @@ margins = Vector2i(6, 5)
 12:5/0 = 0
 13:5/0 = 0
 14:5/0 = 0
-15:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-12:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-15:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-14:7/0 = 0
-15:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-15:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-9:10/0 = 0
-10:10/0 = 0
-11:10/0 = 0
-12:10/0 = 0
-13:10/0 = 0
-14:10/0 = 0
-15:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
-8:11/0 = 0
-9:11/0 = 0
-10:11/0 = 0
-11:11/0 = 0
-12:11/0 = 0
-13:11/0 = 0
-14:11/0 = 0
-15:11/0 = 0
-0:12/0 = 0
-1:12/0 = 0
-2:12/0 = 0
-3:12/0 = 0
-4:12/0 = 0
-5:12/0 = 0
-6:12/0 = 0
-7:12/0 = 0
-8:12/0 = 0
-9:12/0 = 0
-10:12/0 = 0
-11:12/0 = 0
-12:12/0 = 0
-13:12/0 = 0
-14:12/0 = 0
-15:12/0 = 0
-0:13/0 = 0
-1:13/0 = 0
-2:13/0 = 0
-3:13/0 = 0
-4:13/0 = 0
-5:13/0 = 0
-6:13/0 = 0
-7:13/0 = 0
-8:13/0 = 0
-9:13/0 = 0
-10:13/0 = 0
-11:13/0 = 0
-12:13/0 = 0
-13:13/0 = 0
-14:13/0 = 0
-15:13/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_drcr2"]
 physics_layer_0/collision_layer = 256
@@ -3191,317 +3057,317 @@ physics_layer_0/collision_layer = 4096
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_lcdmr")
 
-[node name="MapSpaceStation" type="Node2D"]
+[node name="MapSpaceStation" type="Node2D" unique_id=1764091275]
 
-[node name="Players" type="Node" parent="."]
+[node name="Players" type="Node" parent="." unique_id=2008659973]
 
-[node name="Player1" parent="Players" instance=ExtResource("6_cpfsb")]
+[node name="Player1" parent="Players" unique_id=2074713955 instance=ExtResource("6_cpfsb")]
 position = Vector2(365, 329)
 id = 3
 
-[node name="Camera2D" type="Camera2D" parent="Players/Player1"]
+[node name="Camera2D" type="Camera2D" parent="Players/Player1" unique_id=1364277378]
 zoom = Vector2(3, 3)
 
-[node name="Player2" parent="Players" instance=ExtResource("6_cpfsb")]
+[node name="Player2" parent="Players" unique_id=541430718 instance=ExtResource("6_cpfsb")]
 position = Vector2(798, 328)
 id = 2
 
-[node name="Robots" type="Node" parent="."]
+[node name="Robots" type="Node" parent="." unique_id=516393834]
 
-[node name="Nitro" parent="Robots" instance=ExtResource("2_7y4d2")]
+[node name="Nitro" parent="Robots" unique_id=1921754732 instance=ExtResource("2_7y4d2")]
 position = Vector2(336, 314)
 
-[node name="Drache" parent="Robots" instance=ExtResource("1_fra3j")]
+[node name="Drache" parent="Robots" unique_id=1015020331 instance=ExtResource("1_fra3j")]
 position = Vector2(228, 320)
 
-[node name="Prometheus" parent="Robots" instance=ExtResource("3_a3a4b")]
+[node name="Prometheus" parent="Robots" unique_id=1340016673 instance=ExtResource("3_a3a4b")]
 position = Vector2(433, 145)
 
-[node name="TileMaps" type="Node" parent="."]
+[node name="TileMaps" type="Node" parent="." unique_id=645565241]
 
-[node name="Walls" type="TileMapLayer" parent="TileMaps"]
+[node name="Walls" type="TileMapLayer" parent="TileMaps" unique_id=1042475961]
 use_parent_material = true
 tile_map_data = PackedByteArray("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ARA8ABUAAwAHAAEAARA8ABYAAwAHAAEAARA8ABcAAwAHAAEAARA8ABgAAwAHAAEAARA8ABkAAwAHAAEAARA8ABoAAwAHAAEAARA8ABsAAwAHAAEAARA8ABwAAwAHAAEAARA8AB0AAwAHAAEAARA8AB4AAwAHAAEAARA8AB8AAwAHAAEAARA8ACAAAwAHAAEAARA8ACEAAwAHAAEAARA8ACIAAwAHAAEAARA8ACMAAwAHAAEAARA8ACQAAwAHAAEAARA8ACUAAwAHAAEAARAkAB8AAwAHAAEAARAkACAAAwAHAAEAARAkACEAAwAHAAEAARAwAB8AAwAHAAEAARAwACAAAwAHAAEAARAwACEAAwAHAAEAARAcAB8AAwAHAAEAARAcACAAAwAHAAEAARAcACEAAwAHAAEAARAkABYAAwAHAAEAARAkABcAAwAHAAEAARAkABgAAwAHAAEAARAcABYAAwAHAAEAARAcABcAAwAHAAEAARAcABgAAwAHAAEAARAwABYAAwAHAAEAARAwABcAAwAHAAEAARAwABgAAwAHAAEAARAMABYAAwAHAAEAARAMABcAAwAHAAEAARAMABgAAwAHAAEAARAHABcAAwAHAAEAAQAHABgAAwAHAAEAAQAHABkAAwAHAAEAAQAHABoAAwAHAAEAAQAHABsAAwAHAAEAAQAHABwAAwAHAAEAAQAHAB0AAwAHAAEAAQAHAB4AAwAHAAEAAQAHAB8AAwAHAAEAAQAHACAAAwAHAAEAAQAHACEAAwAHAAEAAQAHACIAAwAHAAEAAQAHACMAAwAHAAEAAQAHACQAAwAHAAEAAQAHACUAAwAHAAEAAQATAB8AAwAHAAEAAQATACAAAwAHAAEAAQATACEAAwAHAAEAAQAfAB8AAwAHAAEAAQAfACAAAwAHAAEAAQAfACEAAwAHAAEAAQAnAB8AAwAHAAEAAQAnACAAAwAHAAEAAQAnACEAAwAHAAEAAQAzAB8AAwAHAAEAAQAzACAAAwAHAAEAAQAzACEAAwAHAAEAAQAnABYAAwAHAAEAAQAnABcAAwAHAAEAAQAnABgAAwAHAAEAAQAfABYAAwAHAAEAAQAfABcAAwAHAAEAAQAfABgAAwAHAAEAAQA3ABYAAwAHAAEAAQA3ABcAAwAHAAEAAQA3ABgAAwAHAAEAAQATABYAAwAHAAEAAQATABcAAwAHAAEAAQATABgAAwAHAAEAAQAQAB8AAwAHAAEAARAQACAAAwAHAAEAARAQACEAAwAHAAEAARAWACgAAwAIAAAAASAXACgAAwAJAAAAAiAYACgAAwAIAAAAASAZACgAAwAJAAAAAiAaACgAAwAIAAAAASAbACgAAwAJAAAAAiAcACgAAwAIAAAAASAdACgAAwAJAAAAAiAmACgAAwAIAAAAASAnACgAAwAJAAAAAiAoACgAAwAIAAAAASApACgAAwAJAAAAAiAqACgAAwAIAAAAASArACgAAwAJAAAAAiAsACgAAwAIAAAAASAtACgAAwAJAAAAAiAeACcAAAAfACYAAQAfACYAAAAfACYAAQAvACYAAAAfACYAAQAuACcAAAAfACYAAQAUACYAAAAkACYAAQAVACcAAAAkACYAAQAkACYAAAAkACYAAQAlACcAAAAkACYAAQAgACYAAAAgACYAAQAhACYAAAAgACYAAQAiACYAAAAgACYAAQAjACYAAAAgACYAAQAIABUAAAAUABUAAQAIAB4AAAAUABUAAQAMAB4AAAAUABUAAQAUAB4AAAAUABUAAQAYAB4AAAAUABUAAQAoAB4AAAAUABUAAQAoABUAAAAUABUAAQAsABUAAAAUABUAAQAsAB4AAAAUABUAAQA0AB4AAAAUABUAAQA4AB4AAAAUABUAAQA4ABUAAAAUABUAAQA6AB4AAAAVABUAAQA5AB4AAAAVABUAAQA1AB4AAAAVABUAAQA2AB4AAAAVABUAAQA5ABUAAAAVABUAAQA6ABUAAAAVABUAAQApABUAAAAVABUAAQAqABUAAAAVABUAAQAtABUAAAAVABUAAQAuABUAAAAVABUAAQAJABUAAAAVABUAAQAKABUAAAAVABUAAQAJAB4AAAAVABUAAQAKAB4AAAAVABUAAQANAB4AAAAVABUAAQAOAB4AAAAVABUAAQAVAB4AAAAVABUAAQAWAB4AAAAVABUAAQAZAB4AAAAVABUAAQAaAB4AAAAVABUAAQApAB4AAAAVABUAAQAqAB4AAAAVABUAAQAtAB4AAAAVABUAAQAuAB4AAAAVABUAAQALABUAAAAXABUAAQALAB4AAAAXABUAAQAPAB4AAAAXABUAAQAXAB4AAAAXABUAAQAbAB4AAAAXABUAAQArABUAAAAXABUAAQAvABUAAAAXABUAAQA7ABUAAAAXABUAAQA7AB4AAAAXABUAAQA3AB4AAAAXABUAAQAvAB4AAAAXABUAAQArAB4AAAAXABUAAQAwABIAAAAkABIAAAAwABMAAAAkABMAAAAwABQAAAAkABQAAAAxABIAAAAlABIAAAAxABMAAAAlABMAAAAxABQAAAAlABQAAAAyABIAAAAmABIAAAAyABMAAAAmABMAAAAyABQAAAAmABQAAAAzABIAAAAnABIAAAAzABMAAAAnABMAAAAzABQAAAAnABQAAAAQABIAAAAkABIAAAAQABMAAAAkABMAAAAQABQAAAAkABQAAAARABIAAAAlABIAAAARABMAAAAlABMAAAARABQAAAAlABQAAAASABIAAAAmABIAAAASABMAAAAmABMAAAASABQAAAAmABQAAAATABIAAAAnABIAAAATABMAAAAnABMAAAATABQAAAAnABQAAAAgABkAAAAgABUAAAAgABoAAAAgABYAAAAgABsAAAAgABcAAAAgABwAAAAgABgAAAAgAB0AAAAgABkAAAAhABkAAAAhABUAAAAhABoAAAAhABYAAAAhABsAAAAhABcAAAAhABwAAAAhABgAAAAhAB0AAAAhABkAAAAiABkAAAAiABUAAAAiABoAAAAiABYAAAAiABsAAAAiABcAAAAiABwAAAAiABgAAAAiAB0AAAAiABkAAAAjABkAAAAjABUAAAAjABoAAAAjABYAAAAjABsAAAAjABcAAAAjABwAAAAjABgAAAAjAB0AAAAjABkAAAAZACcAAAAbACcAAAAaACcAAAAYACcAAAAqACcAAAAYACcAAAApACcAAAAbACcAAAAKACUAAAAWACUAAAALACUAAAAWACUAAAA4ACUAAAAWACUAAAA5ACUAAAAWACUAAAAZAAkAAAAbAAkAAAAaAAkAAAAbAAkAAAAoAAkAAAAbAAkAAAApAAkAAAAbAAkAAAAKACQAAAAWACUAAAALACQAAAAWACUAAAAZACYAAAAWACUAAAAaACYAAAAWACUAAAApACYAAAAWACUAAAAqACYAAAAWACUAAAA4ACQAAAAWACUAAAA5ACQAAAAWACUAAAAZAAgAAAAbAAkAAAAaAAgAAAAbAAkAAAAoAAgAAAAbAAkAAAApAAgAAAAbAAkAAAAdAAQAAAAdAAQAAAAeAAMAAAAdAAQAAAAfAAIAAAAdAAQAAAAkAAIAAAAmAAQAAAAlAAMAAAAmAAQAAAAmAAQAAAAmAAQAAAAsAAUAAAAsAAUAAAAwAA0AAAAsAAUAAAA8AA0AAAAsAAUAAAAQAA0AAAAsAAUAAAAzAA0AAAAXAAUAAAAXAAUAAAAXAAUAAAATAA0AAAAXAAUAAAAHAA0AAAAXAAUAAAAsAAoAAAAsAAoAAAAvACcAAAAsAAoAAAAuACgAAAAsAAoAAAAfACcAAAAsAAoAAAAeACgAAAAsAAoAAAAXAAoAAAAXAAoAAAAUACcAAAAXAAoAAAAVACgAAAAXAAoAAAAkACcAAAAXAAoAAAAlACgAAAAXAAoAAAAHACYAAAAXAAoAAAA8ACYAAAAsAAoAAAAeABUAAwAJAAAAAiAdABUAAwAIAAAAASAcABUAAAAkAAoAAQA=")
 tile_set = SubResource("TileSet_drcr2")
 
-[node name="DestructibleWalls" type="TileMapLayer" parent="TileMaps"]
+[node name="DestructibleWalls" type="TileMapLayer" parent="TileMaps" unique_id=161965202]
 tile_map_data = PackedByteArray("AAAHAA4AAAAXAAYAAQAHAA8AAAAXAAYAAQAHABAAAAAXAAYAAQAHABEAAAAXAAYAAQAHABIAAAAXAAYAAQAHABMAAAAXAAYAAQAHABQAAAAXAAYAAQAHABUAAAAXAAYAAQAHABYAAAAXAAYAAQAHABcAAAAXAAYAAQAHABgAAAAXAAYAAQAHABkAAAAXAAYAAQAHABoAAAAXAAYAAQAHABsAAAAXAAYAAQAHABwAAAAXAAYAAQAHAB0AAAAXAAYAAQAHAB4AAAAXAAYAAQAHAB8AAAAXAAYAAQAHACAAAAAXAAYAAQAHACEAAAAXAAYAAQAHACIAAAAXAAYAAQAHACMAAAAXAAYAAQAHACQAAAAXAAYAAQAHACUAAAAXAAYAAQATAB8AAAAXAAYAAQATACAAAAAXAAYAAQATACEAAAAXAAYAAQATABYAAAAXAAYAAQATABcAAAAXAAYAAQATABgAAAAXAAYAAQAfABYAAAAXAAYAAQAfABcAAAAXAAYAAQAfABgAAAAXAAYAAQAfAB8AAAAXAAYAAQAfACAAAAAXAAYAAQAfACEAAAAXAAYAAQAnAB8AAAAXAAYAAQAnACAAAAAXAAYAAQAnACEAAAAXAAYAAQAnABYAAAAXAAYAAQAnABcAAAAXAAYAAQAnABgAAAAXAAYAAQA3ABYAAAAXAAYAAQA3ABcAAAAXAAYAAQA3ABgAAAAXAAYAAQAzAB8AAAAXAAYAAQAzACAAAAAXAAYAAQAzACEAAAAXAAYAAQATAA4AAAAXAAYAAQATAA8AAAAXAAYAAQATABAAAAAXAAYAAQAQAA4AAAAXAAYAARAQAA8AAAAXAAYAARAQABAAAAAXAAYAARAMABYAAAAXAAYAARAMABcAAAAXAAYAARAMABgAAAAXAAYAARAQACAAAAAXAAYAARAQACEAAAAXAAYAARAQAB8AAAAXAAYAARAcAB8AAAAXAAYAARAcACAAAAAXAAYAARAcACEAAAAXAAYAARAkAB8AAAAXAAYAARAkACAAAAAXAAYAARAkACEAAAAXAAYAARAwAB8AAAAXAAYAARAwACAAAAAXAAYAARAwACEAAAAXAAYAARAwABYAAAAXAAYAARAwABcAAAAXAAYAARAwABgAAAAXAAYAARAwAA4AAAAXAAYAARAwAA8AAAAXAAYAARAwABAAAAAXAAYAARAzAA4AAAAXAAYAAQAzAA8AAAAXAAYAAQAzABAAAAAXAAYAAQA8AA4AAAAXAAYAARA8AA8AAAAXAAYAARA8ABAAAAAXAAYAARA8ABEAAAAXAAYAARA8ABIAAAAXAAYAARA8ABMAAAAXAAYAARA8ABQAAAAXAAYAARA8ABUAAAAXAAYAARA8ABYAAAAXAAYAARA8ABcAAAAXAAYAARA8ABgAAAAXAAYAARA8ABkAAAAXAAYAARA8ABoAAAAXAAYAARA8ABsAAAAXAAYAARA8ABwAAAAXAAYAARA8AB0AAAAXAAYAARA8AB4AAAAXAAYAARA8AB8AAAAXAAYAARA8ACAAAAAXAAYAARA8ACEAAAAXAAYAARA8ACIAAAAXAAYAARA8ACMAAAAXAAYAARA8ACQAAAAXAAYAARA8ACUAAAAXAAYAARAkAAsAAAAXAAYAARAkAAwAAAAXAAYAARAsAAYAAAAXAAYAARAsAAcAAAAXAAYAARAsAAgAAAAXAAYAARAsAAkAAAAXAAYAARAfAAsAAAAXAAYAAQAfAAwAAAAXAAYAAQAXAAYAAAAXAAYAAQAXAAcAAAAXAAYAAQAXAAgAAAAXAAYAAQAXAAkAAAAXAAYAAQAYAAUAAAAYAAUAAQAZAAUAAAAYAAUAAQAaAAUAAAAYAAUAAQAbAAUAAAAYAAUAAQAcAAUAAAAYAAUAAQAnAAUAAAAYAAUAAQAoAAUAAAAYAAUAAQApAAUAAAAYAAUAAQAqAAUAAAAYAAUAAQArAAUAAAAYAAUAAQAYAAoAAAAYAAUAASAZAAoAAAAYAAUAASAaAAoAAAAYAAUAASAbAAoAAAAYAAUAASAcAAoAAAAYAAUAASAdAAoAAAAYAAUAASAeAAoAAAAYAAUAASAlAAoAAAAYAAUAASAmAAoAAAAYAAUAASAnAAoAAAAYAAUAASAoAAoAAAAYAAUAASApAAoAAAAYAAUAASAqAAoAAAAYAAUAASArAAoAAAAYAAUAASAeAA0AAAAYAAUAAQAdAA0AAAAYAAUAAQAcAA0AAAAYAAUAAQAbAA0AAAAYAAUAAQAaAA0AAAAYAAUAAQAZAA0AAAAYAAUAAQAYAA0AAAAYAAUAAQAXAA0AAAAYAAUAAQAWAA0AAAAYAAUAAQAVAA0AAAAYAAUAAQAUAA0AAAAYAAUAAQAlAA0AAAAYAAUAAQAmAA0AAAAYAAUAAQAnAA0AAAAYAAUAAQAoAA0AAAAYAAUAAQApAA0AAAAYAAUAAQAqAA0AAAAYAAUAAQArAA0AAAAYAAUAAQAsAA0AAAAYAAUAAQAtAA0AAAAYAAUAAQAuAA0AAAAYAAUAAQAvAA0AAAAYAAUAAQAxABEAAAAYAAUAAQAyABEAAAAYAAUAAQA0AA0AAAAYAAUAAQA1AA0AAAAYAAUAAQA2AA0AAAAYAAUAAQA3AA0AAAAYAAUAAQA4AA0AAAAYAAUAAQA5AA0AAAAYAAUAAQA6AA0AAAAYAAUAAQA7AA0AAAAYAAUAAQAxABUAAAAYAAUAASAyABUAAAAYAAUAASAzABUAAAAYAAUAASA0ABUAAAAYAAUAASA1ABUAAAAYAAUAASA2ABUAAAAYAAUAASAxABkAAAAYAAUAAQAyABkAAAAYAAUAAQAzABkAAAAYAAUAAQA0ABkAAAAYAAUAAQA1ABkAAAAYAAUAAQA2ABkAAAAYAAUAAQAxAB4AAAAYAAUAASAyAB4AAAAYAAUAASAlABUAAAAYAAUAASAmABUAAAAYAAUAASAdABUAAAAYAAUAASAeABUAAAAYAAUAASAdABkAAAAYAAUAAQAeABkAAAAYAAUAAQAlABkAAAAYAAUAAQAmABkAAAAYAAUAAQAkABYAAAAXAAYAARAkABcAAAAXAAYAARAkABgAAAAXAAYAARAcABYAAAAXAAYAARAcABcAAAAXAAYAARAcABgAAAAXAAYAARAxACIAAAAYAAUAAQAyACIAAAAYAAUAAQAlACIAAAAYAAUAAQAmACIAAAAYAAUAAQAlAB4AAAAYAAUAASAmAB4AAAAYAAUAASAdAB4AAAAYAAUAASAeAB4AAAAYAAUAASAdACIAAAAYAAUAAQAeACIAAAAYAAUAAQAwACYAAAAYAAUAASAxACYAAAAYAAUAASAyACYAAAAYAAUAASAzACYAAAAYAAUAASA0ACYAAAAYAAUAASA1ACYAAAAYAAUAASA2ACYAAAAYAAUAASA3ACYAAAAYAAUAASA4ACYAAAAYAAUAASA5ACYAAAAYAAUAASA6ACYAAAAYAAUAASA7ACYAAAAYAAUAASAmACgAAAAYAAUAASAnACgAAAAYAAUAASAoACgAAAAYAAUAASApACgAAAAYAAUAASAqACgAAAAYAAUAASArACgAAAAYAAUAASAsACgAAAAYAAUAASAtACgAAAAYAAUAASAWACgAAAAYAAUAASAXACgAAAAYAAUAASAYACgAAAAYAAUAASAZACgAAAAYAAUAASAaACgAAAAYAAUAASAbACgAAAAYAAUAASAcACgAAAAYAAUAASAdACgAAAAYAAUAASAIACYAAAAYAAUAASAJACYAAAAYAAUAASAKACYAAAAYAAUAASALACYAAAAYAAUAASAMACYAAAAYAAUAASANACYAAAAYAAUAASAOACYAAAAYAAUAASAPACYAAAAYAAUAASAQACYAAAAYAAUAASARACYAAAAYAAUAASASACYAAAAYAAUAASATACYAAAAYAAUAASARACIAAAAYAAUAAQASACIAAAAYAAUAAQARAB4AAAAYAAUAASASAB4AAAAYAAUAASANABkAAAAYAAUAAQAOABkAAAAYAAUAAQAPABkAAAAYAAUAAQAQABkAAAAYAAUAAQARABkAAAAYAAUAAQASABkAAAAYAAUAAQANABUAAAAYAAUAASAOABUAAAAYAAUAASAPABUAAAAYAAUAASAQABUAAAAYAAUAASARABUAAAAYAAUAASASABUAAAAYAAUAASARABEAAAAYAAUAAQASABEAAAAYAAUAAQAIAA0AAAAYAAUAAQAJAA0AAAAYAAUAAQAKAA0AAAAYAAUAAQALAA0AAAAYAAUAAQAMAA0AAAAYAAUAAQANAA0AAAAYAAUAAQAOAA0AAAAYAAUAAQAPAA0AAAAYAAUAAQAgAAIAAAAYAAUAAQAhAAIAAAAYAAUAAQAiAAIAAAAYAAUAAQAjAAIAAAAYAAUAAQA=")
 tile_set = SubResource("TileSet_4vsx2")
 script = ExtResource("8_362ry")
 
-[node name="Blocks" type="Node2D" parent="."]
+[node name="Blocks" type="Node2D" parent="." unique_id=1292665569]
 
-[node name="Block" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block" parent="Blocks" unique_id=274994622 instance=ExtResource("8_s6wkr")]
 position = Vector2(440, 344)
 type = 8
 
-[node name="Block2" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block2" parent="Blocks" unique_id=1367014971 instance=ExtResource("8_s6wkr")]
 position = Vector2(424, 344)
 type = 7
 
-[node name="Block3" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block3" parent="Blocks" unique_id=952942183 instance=ExtResource("8_s6wkr")]
 position = Vector2(408, 344)
 type = 7
 
-[node name="Block4" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block4" parent="Blocks" unique_id=919174511 instance=ExtResource("8_s6wkr")]
 position = Vector2(392, 344)
 type = 6
 
-[node name="Block5" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block5" parent="Blocks" unique_id=1218263353 instance=ExtResource("8_s6wkr")]
 position = Vector2(376, 344)
 type = 8
 
-[node name="Block6" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block6" parent="Blocks" unique_id=263589143 instance=ExtResource("8_s6wkr")]
 position = Vector2(360, 344)
 type = 7
 
-[node name="Block7" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block7" parent="Blocks" unique_id=1212551466 instance=ExtResource("8_s6wkr")]
 position = Vector2(344, 344)
 type = 7
 
-[node name="Block8" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block8" parent="Blocks" unique_id=722413909 instance=ExtResource("8_s6wkr")]
 position = Vector2(328, 344)
 type = 6
 
-[node name="Block9" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block9" parent="Blocks" unique_id=847721166 instance=ExtResource("8_s6wkr")]
 position = Vector2(136, 344)
 type = 6
 
-[node name="Block10" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block10" parent="Blocks" unique_id=2009943441 instance=ExtResource("8_s6wkr")]
 position = Vector2(152, 344)
 type = 7
 
-[node name="Block11" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block11" parent="Blocks" unique_id=1114830023 instance=ExtResource("8_s6wkr")]
 position = Vector2(168, 344)
 type = 7
 
-[node name="Block12" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block12" parent="Blocks" unique_id=1661026413 instance=ExtResource("8_s6wkr")]
 position = Vector2(184, 344)
 type = 8
 
-[node name="Block13" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block13" parent="Blocks" unique_id=192246529 instance=ExtResource("8_s6wkr")]
 position = Vector2(136, 488)
 type = 6
 
-[node name="Block14" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block14" parent="Blocks" unique_id=422311149 instance=ExtResource("8_s6wkr")]
 position = Vector2(152, 488)
 type = 7
 
-[node name="Block15" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block15" parent="Blocks" unique_id=1952508880 instance=ExtResource("8_s6wkr")]
 position = Vector2(168, 488)
 type = 7
 
-[node name="Block16" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block16" parent="Blocks" unique_id=1689409129 instance=ExtResource("8_s6wkr")]
 position = Vector2(184, 488)
 type = 8
 
-[node name="Block17" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block17" parent="Blocks" unique_id=1603011774 instance=ExtResource("8_s6wkr")]
 position = Vector2(200, 488)
 type = 6
 
-[node name="Block18" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block18" parent="Blocks" unique_id=435020037 instance=ExtResource("8_s6wkr")]
 position = Vector2(216, 488)
 type = 7
 
-[node name="Block19" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block19" parent="Blocks" unique_id=587134165 instance=ExtResource("8_s6wkr")]
 position = Vector2(232, 488)
 type = 7
 
-[node name="Block20" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block20" parent="Blocks" unique_id=112523691 instance=ExtResource("8_s6wkr")]
 position = Vector2(248, 488)
 type = 8
 
-[node name="Block21" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block21" parent="Blocks" unique_id=1324880786 instance=ExtResource("8_s6wkr")]
 position = Vector2(328, 488)
 type = 6
 
-[node name="Block22" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block22" parent="Blocks" unique_id=1009042528 instance=ExtResource("8_s6wkr")]
 position = Vector2(344, 488)
 type = 7
 
-[node name="Block23" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block23" parent="Blocks" unique_id=772764935 instance=ExtResource("8_s6wkr")]
 position = Vector2(360, 488)
 type = 7
 
-[node name="Block24" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block24" parent="Blocks" unique_id=2011524930 instance=ExtResource("8_s6wkr")]
 position = Vector2(376, 488)
 type = 8
 
-[node name="Block25" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block25" parent="Blocks" unique_id=879156796 instance=ExtResource("8_s6wkr")]
 position = Vector2(392, 488)
 type = 6
 
-[node name="Block26" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block26" parent="Blocks" unique_id=455454099 instance=ExtResource("8_s6wkr")]
 position = Vector2(408, 488)
 type = 7
 
-[node name="Block27" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block27" parent="Blocks" unique_id=1851025875 instance=ExtResource("8_s6wkr")]
 position = Vector2(424, 488)
 type = 7
 
-[node name="Block28" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block28" parent="Blocks" unique_id=1716166061 instance=ExtResource("8_s6wkr")]
 position = Vector2(440, 488)
 type = 8
 
-[node name="Block29" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block29" parent="Blocks" unique_id=1408343840 instance=ExtResource("8_s6wkr")]
 position = Vector2(648, 488)
 type = 6
 
-[node name="Block30" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block30" parent="Blocks" unique_id=1901371850 instance=ExtResource("8_s6wkr")]
 position = Vector2(664, 488)
 type = 7
 
-[node name="Block31" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block31" parent="Blocks" unique_id=1436374885 instance=ExtResource("8_s6wkr")]
 position = Vector2(680, 488)
 type = 7
 
-[node name="Block32" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block32" parent="Blocks" unique_id=1561277115 instance=ExtResource("8_s6wkr")]
 position = Vector2(696, 488)
 type = 8
 
-[node name="Block33" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block33" parent="Blocks" unique_id=1553414530 instance=ExtResource("8_s6wkr")]
 position = Vector2(712, 488)
 type = 6
 
-[node name="Block34" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block34" parent="Blocks" unique_id=1181865630 instance=ExtResource("8_s6wkr")]
 position = Vector2(728, 488)
 type = 7
 
-[node name="Block35" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block35" parent="Blocks" unique_id=1361457040 instance=ExtResource("8_s6wkr")]
 position = Vector2(744, 488)
 type = 7
 
-[node name="Block36" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block36" parent="Blocks" unique_id=1498327067 instance=ExtResource("8_s6wkr")]
 position = Vector2(760, 488)
 type = 8
 
-[node name="Block37" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block37" parent="Blocks" unique_id=2015967037 instance=ExtResource("8_s6wkr")]
 position = Vector2(840, 488)
 type = 6
 
-[node name="Block38" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block38" parent="Blocks" unique_id=1455821398 instance=ExtResource("8_s6wkr")]
 position = Vector2(856, 488)
 type = 7
 
-[node name="Block39" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block39" parent="Blocks" unique_id=1448264670 instance=ExtResource("8_s6wkr")]
 position = Vector2(872, 488)
 type = 7
 
-[node name="Block40" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block40" parent="Blocks" unique_id=91187911 instance=ExtResource("8_s6wkr")]
 position = Vector2(888, 488)
 type = 8
 
-[node name="Block41" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block41" parent="Blocks" unique_id=2087300559 instance=ExtResource("8_s6wkr")]
 position = Vector2(904, 488)
 type = 6
 
-[node name="Block42" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block42" parent="Blocks" unique_id=506482489 instance=ExtResource("8_s6wkr")]
 position = Vector2(920, 488)
 type = 7
 
-[node name="Block43" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block43" parent="Blocks" unique_id=798553819 instance=ExtResource("8_s6wkr")]
 position = Vector2(936, 488)
 type = 7
 
-[node name="Block44" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block44" parent="Blocks" unique_id=1253104346 instance=ExtResource("8_s6wkr")]
 position = Vector2(952, 488)
 type = 8
 
-[node name="Block45" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block45" parent="Blocks" unique_id=793730338 instance=ExtResource("8_s6wkr")]
 position = Vector2(904, 344)
 type = 6
 
-[node name="Block46" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block46" parent="Blocks" unique_id=1952648238 instance=ExtResource("8_s6wkr")]
 position = Vector2(920, 344)
 type = 7
 
-[node name="Block47" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block47" parent="Blocks" unique_id=1643389618 instance=ExtResource("8_s6wkr")]
 position = Vector2(936, 344)
 type = 7
 
-[node name="Block48" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block48" parent="Blocks" unique_id=1793245916 instance=ExtResource("8_s6wkr")]
 position = Vector2(952, 344)
 type = 8
 
-[node name="Block49" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block49" parent="Blocks" unique_id=1974836654 instance=ExtResource("8_s6wkr")]
 position = Vector2(648, 344)
 type = 6
 
-[node name="Block50" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block50" parent="Blocks" unique_id=1377210516 instance=ExtResource("8_s6wkr")]
 position = Vector2(664, 344)
 type = 7
 
-[node name="Block51" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block51" parent="Blocks" unique_id=877894411 instance=ExtResource("8_s6wkr")]
 position = Vector2(680, 344)
 type = 7
 
-[node name="Block52" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block52" parent="Blocks" unique_id=1578666753 instance=ExtResource("8_s6wkr")]
 position = Vector2(696, 344)
 type = 8
 
-[node name="Block53" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block53" parent="Blocks" unique_id=1431188893 instance=ExtResource("8_s6wkr")]
 position = Vector2(712, 344)
 type = 6
 
-[node name="Block54" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block54" parent="Blocks" unique_id=2071085969 instance=ExtResource("8_s6wkr")]
 position = Vector2(728, 344)
 type = 7
 
-[node name="Block55" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block55" parent="Blocks" unique_id=1658106349 instance=ExtResource("8_s6wkr")]
 position = Vector2(744, 344)
 type = 7
 
-[node name="Block56" parent="Blocks" instance=ExtResource("8_s6wkr")]
+[node name="Block56" parent="Blocks" unique_id=100006386 instance=ExtResource("8_s6wkr")]
 position = Vector2(760, 344)
 type = 8
 
-[node name="Elevators" type="Node" parent="."]
+[node name="Elevators" type="Node" parent="." unique_id=1474296801]
 
-[node name="Elevator" parent="Elevators" instance=ExtResource("10_afqlp")]
+[node name="Elevator" parent="Elevators" unique_id=1254418453 instance=ExtResource("10_afqlp")]
 position = Vector2(544, 592)
 
-[node name="ElevatorFloor" parent="Elevators" instance=ExtResource("12_qun11")]
+[node name="ElevatorFloor" parent="Elevators" unique_id=1646194794 instance=ExtResource("12_qun11")]
 position = Vector2(544, 616)
 
-[node name="ElevatorBackGround" parent="Elevators" instance=ExtResource("11_3246c")]
+[node name="ElevatorBackGround" parent="Elevators" unique_id=1815082123 instance=ExtResource("11_3246c")]
 position = Vector2(544, 160)
 
-[node name="ElevatorBackGround2" parent="Elevators" instance=ExtResource("11_3246c")]
+[node name="ElevatorBackGround2" parent="Elevators" unique_id=110156825 instance=ExtResource("11_3246c")]
 position = Vector2(544, 224)
 
-[node name="ElevatorBackGround3" parent="Elevators" instance=ExtResource("11_3246c")]
+[node name="ElevatorBackGround3" parent="Elevators" unique_id=1136761157 instance=ExtResource("11_3246c")]
 position = Vector2(544, 288)
 
-[node name="ElevatorBackGround4" parent="Elevators" instance=ExtResource("11_3246c")]
+[node name="ElevatorBackGround4" parent="Elevators" unique_id=676082178 instance=ExtResource("11_3246c")]
 position = Vector2(544, 352)
 
-[node name="ElevatorBackGround5" parent="Elevators" instance=ExtResource("11_3246c")]
+[node name="ElevatorBackGround5" parent="Elevators" unique_id=202535501 instance=ExtResource("11_3246c")]
 position = Vector2(544, 416)
 
-[node name="ElevatorBackGround6" parent="Elevators" instance=ExtResource("11_3246c")]
+[node name="ElevatorBackGround6" parent="Elevators" unique_id=1040277767 instance=ExtResource("11_3246c")]
 position = Vector2(544, 480)
 
-[node name="ElevatorBackGround7" parent="Elevators" instance=ExtResource("11_3246c")]
+[node name="ElevatorBackGround7" parent="Elevators" unique_id=1118246732 instance=ExtResource("11_3246c")]
 position = Vector2(544, 544)
 
-[node name="ElevatorBackGround8" parent="Elevators" instance=ExtResource("11_3246c")]
+[node name="ElevatorBackGround8" parent="Elevators" unique_id=1187855885 instance=ExtResource("11_3246c")]
 position = Vector2(544, 576)
 
-[node name="Ports" type="Node" parent="."]
+[node name="Ports" type="Node" parent="." unique_id=1574154552]
 
-[node name="Port" parent="Ports" instance=ExtResource("13_d5sbr")]
+[node name="Port" parent="Ports" unique_id=1231104960 instance=ExtResource("13_d5sbr")]
 position = Vector2(288, 464)
 
-[node name="Port2" parent="Ports" instance=ExtResource("13_d5sbr")]
+[node name="Port2" parent="Ports" unique_id=414023477 instance=ExtResource("13_d5sbr")]
 position = Vector2(800, 464)
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=2020413552]
 show_behind_parent = true
 offset_top = -8.0
 offset_right = 1088.0
 offset_bottom = 661.0
 texture = ExtResource("2_7p05h")
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=888963373]
 stream = ExtResource("3_kdisv")
 autoplay = true

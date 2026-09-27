@@ -42,11 +42,11 @@ func _physics_process(delta):
   var dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized()
 
   match state:
-    State.WALK:
+   State.WALK:
       process_walk(delta, dir)
-    State.FLY:
+   State.FLY:
       process_fly(delta, dir)
-    State.ROBOT:
+   State.ROBOT:
       process_robot(delta, dir)
 
   # cannon aiming is always enabled
@@ -118,7 +118,7 @@ func process_shoot(delta):
   # check shoot button
   shooting = Input.is_action_pressed("button_west")
   if shooting:
-    body_animated_sprite.play(dict_animation_by_angle[str(cannon_angle)])
+    body_animated_sprite.play(dict_animation_by_angle[str(int(cannon_angle))])
     var bullet = bullet_scene.instantiate()
     var angle = eval_cannon_angle()
     bullet.direction = Vector2(-1 if flipped else 1, 0).rotated(angle).normalized()
