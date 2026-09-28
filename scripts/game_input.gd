@@ -4,7 +4,8 @@ signal devices_changed
 
 const KEYBOARD_DEVICE := -100
 const AUTO_DEVICE := -101
-const PLAYER_SLOTS := [1, 2]
+const PLAYER_SLOTS := [1, 2, 3, 4]
+const PLAYER_COUNTS := [2, 3, 4]
 const ACTIONS := [
   "left",
   "right",
@@ -42,8 +43,14 @@ const JOY_AXES := {
 const GAME_SCENE := "res://scenes/split_screen/static_split_screen.tscn"
 const START_MENU_SCENE: PackedScene = preload("res://scenes/ui/start_menu.tscn")
 
-var _player_devices := {1: KEYBOARD_DEVICE, 2: KEYBOARD_DEVICE}
-var _auto_assign := {1: true, 2: true}
+var active_player_count := 2
+var _player_devices := {
+  1: KEYBOARD_DEVICE,
+  2: KEYBOARD_DEVICE,
+  3: KEYBOARD_DEVICE,
+  4: KEYBOARD_DEVICE,
+}
+var _auto_assign := {1: true, 2: true, 3: true, 4: true}
 var _pause_menu_layer: CanvasLayer
 
 
@@ -95,6 +102,13 @@ func _close_pause_menu() -> void:
 
 func resume_game() -> void:
   _close_pause_menu()
+
+
+func set_active_player_count(player_count: int) -> void:
+  if player_count not in PLAYER_COUNTS:
+    push_error("Invalid player count: %d" % player_count)
+    return
+  active_player_count = player_count
 
 
 func get_action_name(player_slot: int, action: String) -> StringName:

@@ -5,6 +5,8 @@ const GAME_SCENE := "res://scenes/split_screen/static_split_screen.tscn"
 @export var pause_menu := false
 
 var player_options: Dictionary = {}
+var player_rows: Dictionary = {}
+var player_count_option: OptionButton
 var status_label: Label
 
 
@@ -35,9 +37,31 @@ func _ready() -> void:
   subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
   layout.add_child(subtitle)
 
+  if not pause_menu:
+    var count_row := HBoxContainer.new()
+    layout.add_child(count_row)
+
+    var count_label := Label.new()
+    count_label.text = "Jogadores"
+    count_label.custom_minimum_size.x = 110
+    count_row.add_child(count_label)
+
+    player_count_option = OptionButton.new()
+    player_count_option.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+    for player_count in GameInput.PLAYER_COUNTS:
+      player_count_option.add_item("%d jogadores" % player_count, player_count)
+    player_count_option.select(player_count_option.get_item_index(GameInput.active_player_count))
+    player_count_option.item_selected.connect(_on_player_count_selected)
+    count_row.add_child(player_count_option)
+
+  var player_rows_container := VBoxContainer.new()
+  layout.add_child(player_rows_container)
+
   for player_slot in GameInput.PLAYER_SLOTS:
     var row := HBoxContainer.new()
-    layout.add_child(row)
+    row.visible = player_slot <= GameInput.active_player_count
+    player_rows_container.add_child(row)
+    player_rows[player_slot] = row
 
     var label := Label.new()
     label.text = "Jogador %d" % player_slot
@@ -70,6 +94,8 @@ func _ready() -> void:
 func _refresh_options() -> void:
   for player_slot in GameInput.PLAYER_SLOTS:
     var option: OptionButton = player_options[player_slot]
+    var row: HBoxContainer = player_rows[player_slot]
+    row.visible = player_slot <= GameInput.active_player_count
     option.clear()
     option.add_item("Automático", GameInput.AUTO_DEVICE)
     option.add_item("Teclado", GameInput.KEYBOARD_DEVICE)
@@ -86,6 +112,11 @@ func _refresh_options() -> void:
 
   var connected_count := Input.get_connected_joypads().size()
   status_label.text = "%d controle(s) detectado(s)" % connected_count
+
+
+func _on_player_count_selected(_index: int) -> void:
+  GameInput.set_active_player_count(player_count_option.get_selected_id())
+  _refresh_options()
 
 
 func _on_player_option_selected(_index: int, player_slot: int, option: OptionButton) -> void:

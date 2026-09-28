@@ -6,7 +6,7 @@ relativo à raiz do projeto.
 
 ## 1. Visão geral
 
-Metal Warriors é um jogo 2D de ação com dois pilotos que podem lutar a pé ou
+Metal Warriors é um jogo 2D de ação com até quatro pilotos que podem lutar a pé ou
 embarcar em robôs. A composição do jogo é baseada em cenas reutilizáveis:
 pilotos, robôs, projéteis e elementos da fase são cenas independentes instanciadas
 na cena do mapa.
@@ -60,7 +60,7 @@ para as ações isoladas de cada jogador quando este usa o teclado.
 | `shoulder_left`, `shoulder_right` | `Q` e `E` |
 | `button_select` | `Shift` |
 
-As ações `p1_<ação>` e `p2_<ação>` são criadas em tempo de execução. Os
+As ações `p1_<ação>` até `p4_<ação>` são criadas em tempo de execução. Os
 controladores usam o D-pad e o eixo analógico esquerdo para movimento; os botões
 A/B/X/Y mapeiam para south/east/west/north, os ombros para shoulder_left/right
 e o botão Back para `button_select`.
@@ -87,21 +87,22 @@ continuam configuradas nas cenas.
 
 `GameInput` consulta `Input.get_connected_joypads()` no início e quando o sinal
 `Input.joy_connection_changed` é emitido. No modo automático, ordena os IDs dos
-controles conectados, atribui o primeiro a P1 e o segundo a P2, e usa o teclado
-nas vagas sem controle. Cada jogador também pode selecionar manualmente
+controles conectados e atribui um controle por vaga, em ordem de P1 a P4; usa o
+teclado nas vagas sem controle. Cada jogador também pode selecionar manualmente
 Automático, Teclado ou um controle no menu.
 
 Cada piloto tem dois identificadores distintos:
 
-- `input_slot`: identifica o conjunto de entradas (1 para P1, 2 para P2).
+- `input_slot`: identifica o conjunto de entradas (1 a 4, conforme o jogador).
 - `id`: identidade visual usada pelo sistema de cores do robô.
 
-Na fase atual, P1 tem `id = 3` e `input_slot = 1`; P2 tem `id = 2` e
-`input_slot = 2`. Não se deve confundir o número de jogador com a cor.
+P1 tem `id = 3`, P2 `id = 2`, P3 `id = 1` e P4 `id = 4`; seus `input_slot`s
+correspondem aos números de jogador. Não se deve confundir o número de jogador
+com a cor.
 
-Sem controles conectados, as duas vagas usam o mesmo mapa de teclado existente.
-Isso significa que ambos respondem às mesmas teclas, não que o jogo forneça dois
-conjuntos independentes de teclas.
+As vagas configuradas para teclado usam o mesmo mapa de teclado existente.
+Assim, vários jogadores configurados para teclado respondem às mesmas teclas;
+não há conjuntos independentes de teclas por jogador.
 
 ### Cena do menu
 
@@ -115,8 +116,8 @@ StartMenu (Control)
     └── VBoxContainer
         ├── Label (título)
         ├── Label (instrução)
-        ├── HBoxContainer (Jogador 1 + OptionButton)
-        ├── HBoxContainer (Jogador 2 + OptionButton)
+        ├── HBoxContainer (quantidade de jogadores, menu inicial)
+        ├── VBoxContainer (uma opção de entrada por jogador ativo)
         ├── Label (quantidade de controles)
         └── Button (Iniciar ou Retomar)
 ```
@@ -141,16 +142,18 @@ pausada.
 ## 4. Cena principal: estação espacial
 
 `scenes/maps/space_station.tscn` tem o nó raiz `MapSpaceStation` (`Node2D`) e
-85 nós declarados no arquivo. É instanciada uma vez na área superior; a área
-inferior compartilha seu mundo 2D e renderiza a mesma fase com a câmera de P2.
-A árvore funcional do mapa é:
+85 nós declarados no arquivo. É instanciada uma vez; cada viewport renderiza o
+mesmo mundo 2D a partir da câmera do respectivo jogador. A árvore funcional do
+mapa é:
 
 ```text
 MapSpaceStation (Node2D)
 ├── Players (Node)
 │   ├── Player1 (instância de Pilot)
 │   │   └── Camera2D
-│   └── Player2 (instância de Pilot)
+│   ├── Player2 (instância de Pilot)
+│   ├── Player3 (instância de Pilot, criada para partidas com 3 ou 4 jogadores)
+│   └── Player4 (instância de Pilot, criada para partidas com 4 jogadores)
 ├── Robots (Node)
 │   ├── Nitro (instância de Nitro)
 │   ├── Drache (instância de Drache)
@@ -328,11 +331,14 @@ removido da árvore.
 
 ### Split-screen
 
-`scenes/split_screen/static_split_screen.tscn` é uma cena alternativa, não a
-cena principal configurada. Sua árvore usa `HBoxContainer`, dois
-`SubViewportContainer`s, dois `SubViewport`s e uma câmera por viewport. O mapa é
-instanciado no primeiro viewport; `viewports.gd` compartilha seu `world_2d` com
-o segundo e associa as câmeras a `Players/Player1` e `Players/Player2`.
+`scenes/split_screen/static_split_screen.tscn` é a cena de partida carregada
+pelo menu. O menu permite selecionar 2, 3 ou 4 jogadores. A cena usa um
+`GridContainer` com quatro `SubViewportContainer`s, quatro `SubViewport`s e uma
+câmera por viewport. Com 2 jogadores, os viewports ficam empilhados; com 3 ou 4,
+formam uma grade 2x2. O mapa é instanciado uma vez no primeiro viewport;
+`viewports.gd` compartilha seu `world_2d` com os demais, cria os pilotos
+adicionais conforme a seleção e associa cada câmera ao respectivo jogador.
+P3 e P4 começam no piso inferior, abaixo das posições de P1 e P2.
 
 O script `voronoi_camera_controller.gd` contém uma abordagem diferente, que
 ajusta câmeras e parâmetros de shader em função da distância dos jogadores.
@@ -367,7 +373,7 @@ o fluxo padrão descrito acima.
   `GameInput`, configure o evento correspondente para controle em
   `JOY_BUTTONS`/`JOY_AXES` e consuma-o por `player_action_pressed()` ou
   `player_axis()`. Evite ler ações globais diretamente nos scripts jogáveis,
-  pois isso faz os dois jogadores compartilharem a mesma entrada.
+  pois isso faz os jogadores compartilharem a mesma entrada.
 - **Adicionar um tipo de projétil:** inclua o enum em `Global.BulletType`, crie
   uma cena com `Area2D`, `AnimatedSprite2D` e `CollisionShape2D`, e defina suas
   propriedades exportadas na cena.

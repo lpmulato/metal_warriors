@@ -15,12 +15,13 @@ A branch `godot_4.7.2` e publicada em `origin` (`lpmulato/metal_warriors`) e rec
 
 ## Tela inicial, controles e pausa
 
-- `project.godot` agora inicia em `scenes/ui/start_menu.tscn`; a tela permite selecionar Automático, Teclado ou um controle por jogador.
-- A fase abre em tela dividida horizontal: P1 fica na parte superior e P2 na inferior; cada camera acompanha seu piloto. A fase e instanciada uma vez e as duas areas compartilham o mesmo mundo 2D.
-- `scripts/game_input.gd` cria actions separadas por jogador. Em modo automatico, o primeiro controle conectado vai para P1, o segundo para P2; vagas sem controle usam o teclado.
-- `scripts/abstract/playable.gd`, `scripts/abstract/robot.gd`, `scripts/pilot.gd` e os scripts dos robos usam as actions da vaga do piloto. `Player2` usa `input_slot = 2`; o campo `id` permanece separado para preservar a cor/material existente.
+- `project.godot` inicia em `scenes/ui/start_menu.tscn`; a tela permite escolher 2, 3 ou 4 jogadores e selecionar Automático, Teclado ou um controle por jogador.
+- A fase com 2 jogadores usa tela dividida horizontal (P1 em cima, P2 embaixo); com 3 ou 4, usa quatro quadrantes. Cada câmera acompanha seu piloto. P3 e P4 são criados no piso inferior, abaixo dos pontos iniciais de P1 e P2; todos compartilham uma instância do mapa.
+- `scripts/game_input.gd` cria actions separadas para P1-P4. Em modo automático, os controles conectados são atribuídos em ordem às vagas de P1 a P4; vagas sem controle usam o teclado.
+- `scripts/abstract/playable.gd`, `scripts/abstract/robot.gd`, `scripts/pilot.gd` e os scripts dos robos usam as actions da vaga do piloto (`input_slot` de 1 a 4). O campo `id` permanece separado para preservar a cor/material existente.
 - Durante a fase, Esc abre/fecha o menu pausado; Enter abre o menu. Enter no botao focado "Retomar" volta ao jogo.
-- O usuario confirmou que a tela inicial apareceu e funcionou ao iniciar o jogo. A pausa por Esc/Enter, a deteccao/atribuicao dos controles e a nova tela dividida ainda precisam de teste manual. A cena de tela dividida foi validada em modo headless com Godot 4.7.2.
+- O usuário confirmou que a tela inicial apareceu e funcionou ao iniciar o jogo. A pausa por Esc/Enter e a detecção/atribuição dos controles ainda precisam de teste manual. Menu, cena e configuração de 2, 3 e 4 jogadores foram validados em modo headless com Godot 4.7.2, incluindo visibilidade dos viewports, alvos das câmeras e posições iniciais de P3/P4; a apresentação gráfica ainda precisa de teste manual.
+- A implementação atual de multiplayer e suas atualizações de documentação estão modificadas localmente e ainda não foram commitadas ou publicadas.
 
 ## Erros observados no projeto (historico)
 
@@ -29,7 +30,7 @@ A branch `godot_4.7.2` e publicada em `origin` (`lpmulato/metal_warriors`) e rec
 - `bullet.gd:explode()`: `collision_shape.disabled = true` era chamado dentro do callback `_on_body_entered`, durante o flush de fisica do Godot, causando o erro `Can't change this state while flushing queries`. Corrigido usando `collision_shape.set_deferred("disabled", true)`.
 - `pilot.gd:process_shoot()`: `dict_animation_by_angle[str(cannon_angle)]` falhava porque `cannon_angle` e `float` (ex.: `45.0`), mas as chaves do dicionario sao strings sem casa decimal (`"45"`). Corrigido com `str(int(cannon_angle))`.
 - Tiles fora dos limites do atlas: `TileSetAtlasSource_2a5vj` em `scenes/maps/space_station.tscn` (textura `assets/maps/space_station/240926-184325.png`, 256x104px) declarava uma grade de 16 colunas x 14 linhas (0-15, 0-13) copiada do atlas maior `TileSetAtlasSource_hwpc8`, mas a imagem so comporta 15 colunas (0-14) x 6 linhas (0-5). As linhas 6-13 e a coluna 15 apontavam para pixels fora da imagem. Confirmado por decodificacao do `tile_map_data` que a camada `Walls` (nao `DestructibleWalls`) so usa os tiles `(7,1)`, `(8,0)`, `(9,0)` desse atlas, todos dentro da area valida — as entradas fora dos limites eram sobras nao usadas. Corrigido removendo essas entradas orfas; nenhum tile visivel foi alterado.
-- A Intel HD 2500 nao inicializou Vulkan/D3D12 com Godot 4.3; `--rendering-method gl_compatibility` foi usado como alternativa. A abertura grafica com Godot 4.7.2 ainda nao foi confirmada. A validacao headless neste ambiente falha com "Acesso negado" ao iniciar o `.exe` (bloqueio do ambiente da ferramenta) — precisa ser rodada manualmente pelo usuario.
+- A Intel HD 2500 nao inicializou Vulkan/D3D12 com Godot 4.3; `--rendering-method gl_compatibility` foi usado como alternativa. A abertura grafica com Godot 4.7.2 ainda nao foi confirmada. A validação headless atual com Godot 4.7.2 funciona; a falha de inicialização headless mencionada no histórico foi superada.
 
 ## Estado local a preservar
 

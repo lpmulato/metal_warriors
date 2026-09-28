@@ -7,7 +7,7 @@ func custom_class_name(): return "Pilot"
 
 # properties defined in the editor
 @export_range(1, 4) var id := 1 ## player identifier
-@export_range(1, 2) var input_slot := 1
+@export_range(1, 4) var input_slot := 1
 @export var max_walk_speed := 100
 @export var max_fly_speed := 200
 
